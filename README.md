@@ -196,7 +196,7 @@ Else you have some Exceptions like columnnotfoundexception and so on
 6. Advanced Usage:  
 If you want a default Filter for your Entity, you can set YourClassname::$staticEntityfilterfunction.
 It applies mostly everywhere your entity is queried. This is not a senseful example because it has no
-effect (intcolumn = 1 OR NOT intcolumn = 1), testso you have to use another query. You have to change Example:: to YourClassname::
+effect (intcolumn = 1 OR NOT intcolumn = 1), so you have to use another query. You have to change Example:: to YourClassname::
 ```php
 <?php
  /**
