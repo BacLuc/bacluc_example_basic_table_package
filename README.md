@@ -184,15 +184,15 @@ View if it is shown in a DirectEditAssociationEntityField, you set the $this->de
 ```
 5. When you finished implementing your Entities, remove the unnessesary ones and make your first test.
 Install the Package and look if the SQL Tables are generated right.  
-**<Important:>**  
+**\<Important:\>**  
 Before you change anything about
-* the columns
-* the table name of the entity
-* the classname
-* discriminatorvalue  
+  * the columns
+  * the table name of the entity
+  * the classname
+  * discriminatorvalue  
 you have to first uninstall the package, apply your changes, and then install it again.
 Else you have some Exceptions like columnnotfoundexception and so on
-**<\/Important>**  
+**\<\/Important\>**  
 6. Advanced Usage:  
 If you want a default Filter for your Entity, you can set YourClassname::$staticEntityfilterfunction.
 It applies mostly everywhere your entity is queried. This is not a senseful example because it has no
