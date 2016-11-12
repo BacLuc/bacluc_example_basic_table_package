@@ -57,17 +57,17 @@ class Example extends BaseEntity//TODO change class name
 
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", nullable=true)
      */
     protected $stringcolumn;
 
     /**
-     * @Column(type="integer")
+     * @Column(type="integer", nullable=true)
      */
     protected $intcolumn;
 
     /**
-     * @Column(type="float")
+     * @Column(type="float", nullable=true)
      */
     protected $floatcolumn;
 
@@ -78,7 +78,7 @@ class Example extends BaseEntity//TODO change class name
     protected $datecolumn;
 
     /**
-     * @Column(type="boolean")
+     * @Column(type="boolean", nullable=true)
      */
     protected $booleancolumn;
 
@@ -110,7 +110,7 @@ class Example extends BaseEntity//TODO change class name
 
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", nullable=true)
      */
     protected $dropdownfield;
 
@@ -274,8 +274,8 @@ Example::$staticEntityfilterfunction = function(QueryBuilder $query, array $quer
     $query->andWhere(
         $query->expr()->orX(
             $query->expr()->eq($firstEntityName.".intcolumn", ":ExampleProductintcolumn")
-            ,
-            $query->expr()->neq($firstEntityName.".intcolumn", ":ExampleProductintcolumn")
+            ,$query->expr()->neq($firstEntityName.".intcolumn", ":ExampleProductintcolumn")
+            ,$query->expr()->isNull($firstEntityName.".intcolumn")
         )
 
 
