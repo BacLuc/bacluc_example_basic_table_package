@@ -204,6 +204,8 @@ class Example extends BaseEntity//TODO change class name
          */
         $this->fieldTypes['dropdownfield']->setOptions($userConstants);
 
+        $this->fieldTypes['ManyToOne']->setNullable(true);
+
         /**
          * @var DropdownMultilinkField $addresses
          * //TODO if you want to convert a field to a DirectEditAssociatedEntityMultipleField or DirectEditAssociatedEntityField
@@ -213,7 +215,7 @@ class Example extends BaseEntity//TODO change class name
         $directEditField = new DirectEditAssociatedEntityMultipleField($addresses->getSQLFieldName(), "Email Addresses", $addresses->getPostName());
         DropdownLinkField::copyLinkInfo($addresses,$directEditField);
         $this->fieldTypes['EmailAddresses']=$directEditField;
-
+        $this->fieldTypes['EmailAddresses']->setNullable(true);
 
     }
 
