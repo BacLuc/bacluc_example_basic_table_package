@@ -14,7 +14,7 @@ use BlockTypeSet;
 use Concrete\Package\BasicTablePackage\Src\DiscriminatorEntry\DiscriminatorListener;
 class Controller extends Package
 {
-    protected $pkgHandle = 'bacluc_example_extend_basic_table_package'; //TODO change pkgHandle
+    protected $pkgHandle = 'bacluc_example_basic_table_package'; //TODO change pkgHandle
     protected $appVersionRequired = '5.7.4'; //TODO change appVersionRequired
     protected $pkgVersion = '0.0.1'; //TODO change pkgVersion
     public function getPackageName()
