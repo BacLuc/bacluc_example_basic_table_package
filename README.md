@@ -212,12 +212,9 @@ effect (intcolumn = 1 OR NOT intcolumn = 1), testso you have to use another quer
  *
  * );
  * @return QueryBuilder
-
- *
- * @return QueryBuilder
  * TODO apply entity default filter
  */
-Example::$staticEntityfilterfunction = function(QueryBuilder $query, array $queryConfig = array()){
+ Example::$staticEntityfilterfunction = function(QueryBuilder $query, array $queryConfig = array()){
     $firstEntityName = $queryConfig['fromEntityStart']['shortname'];
 
     //make complex query, for more see doctrine dok
