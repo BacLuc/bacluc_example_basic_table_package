@@ -204,7 +204,7 @@ class Example extends BaseEntity//TODO change class name
          */
         $this->fieldTypes['dropdownfield']->setOptions($userConstants);
 
-        $this->fieldTypes['ManyToOne']->setNullable(true);
+        //$this->fieldTypes['ManyToOne']->setNullable(true);
 
         /**
          * @var DropdownMultilinkField $addresses
