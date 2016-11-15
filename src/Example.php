@@ -145,16 +145,9 @@ class Example extends BaseEntity//TODO change class name
         parent::__construct();
 
         //TODO foreach Collection valued property, you have to set the ArrayCollection if it is null
-        if($this->Parents == null){
-            $this->Parents = new ArrayCollection();
-        }
 
 
-        if($this->Children == null){
-            $this->Children = new ArrayCollection();
-        }
-
-        if($this->OneToMany == nuill){
+        if($this->OneToMany == null){
             $this->OneToMany = new ArrayCollection();
         }
 
@@ -204,6 +197,7 @@ class Example extends BaseEntity//TODO change class name
          */
         $this->fieldTypes['dropdownfield']->setOptions($userConstants);
 
+        //you can set nullability of DropDownLinkFields
         //$this->fieldTypes['ManyToOne']->setNullable(true);
 
         /**
