@@ -168,7 +168,7 @@ To change this, you can call in the same function the setLabel() function of the
 You can define your own EntityView. To do that, create a class which extends AbstractFormView in src/EntityViews
 and implement the method getFormView($form, $clientSideValidationActivated=true).  
 An Example is in [src/EntityViews/EmailAddressFormView.php](src/EntityViews/EmailAddressFormView.php).
-Then in your Entity, override the method. You define a FormView, and if you want a special 
+Then in your Entity, override the method setDefaultFormViews. You define a FormView, and if you want a special 
 View if it is shown in a DirectEditAssociationEntityField, you set the $this->defaultSubFormView.
  ```php
     <?php
