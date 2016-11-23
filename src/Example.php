@@ -110,6 +110,13 @@ class Example extends BaseEntity//TODO change class name
 
 
     /**
+     * @var Phone[]
+     * @OneToMany(targetEntity="Concrete\Package\BaclucExampleBasicTablePackage\Src\Phone", mappedBy="ManyToOne")
+     */
+    protected $Phones;
+
+
+    /**
      * @Column(type="string", nullable=true)
      */
     protected $dropdownfield;
@@ -154,6 +161,10 @@ class Example extends BaseEntity//TODO change class name
 
         if($this->EmailAddresses == null){
             $this->EmailAddresses = new ArrayCollection();
+        }
+
+        if($this->Phones == null){
+            $this->Phones = new ArrayCollection();
         }
 
 

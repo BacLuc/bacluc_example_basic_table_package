@@ -67,6 +67,7 @@ class Controller extends Package
             }
             //TODO install you blockTypes
             BlockType::installBlockType("bacluc_example_block", $pkg);
+            BlockType::installBlockType("bacluc_phone_block", $pkg);
             $em->getConnection()->commit();
         }catch(Exception $e){
             $em->getConnection()->rollBack();
