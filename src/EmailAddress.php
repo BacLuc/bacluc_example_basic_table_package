@@ -35,6 +35,8 @@ use Doctrine\ORM\Mapping\Table;
 class EmailAddress extends Address
 {
     use EntityGetterSetter;
+    //dontchange
+    public static $staticEntityfilterfunction; //that you have a filter that is only for this entity
     /**
      * @var int
      * @Id @Column(type="integer")
