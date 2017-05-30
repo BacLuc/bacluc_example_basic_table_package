@@ -11,7 +11,6 @@ use Concrete\Package\BasicTablePackage\Src\EntityGetterSetter;//TODO change use 
 use Concrete\Package\BasicTablePackage\Src\FieldTypes\DropdownLinkField;
 use Concrete\Package\BasicTablePackage\Src\NewFieldTypes\DropdownLinkField as NewDropdownLinkField;
 use Concrete\Package\BasicTablePackage\Src\NewFieldTypes\AbstractAssociationField;
-use Concrete\Package\BasicTablePackage\Src\NewFieldTypes\DropdownField;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Concrete\Package\BasicTablePackage\Src\FieldTypes\DateField;
