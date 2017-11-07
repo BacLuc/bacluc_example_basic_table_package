@@ -1,26 +1,14 @@
 <?php
+
 namespace Concrete\Package\BaclucExampleBasicTablePackage\Block\BaclucPhoneBlock;
+
 //TODO change namespace
 
-use Concrete\Core\Package\Package;
-use Concrete\Package\BaclucExampleBasicTablePackage\Src\Example;
 use Concrete\Package\BaclucExampleBasicTablePackage\Src\Phone;
-use Concrete\Package\BasicTablePackage\Src\BlockOptions\DropdownBlockOption;
-use Concrete\Package\BasicTablePackage\Src\BlockOptions\TableBlockOption;
-use Concrete\Core\Block\BlockController;
-use Concrete\Package\BasicTablePackage\Src\BasicTableInstance;
-use Concrete\Package\BasicTablePackage\Src\BlockOptions\TextBlockOption;
-use Concrete\Package\BasicTablePackage\Src\BaseEntity;
-use Concrete\Package\BasicTablePackage\Src\ExampleBaseEntity;
-use Core;
 use Concrete\Package\BasicTablePackage\Src\BlockOptions\CanEditOption;
-use Doctrine\DBAL\Schema\Table;
-use OAuth\Common\Exception\Exception;
-use Page;
-use User;
-use Concrete\Package\BasicTablePackage\Src\FieldTypes\Field as Field;
-use Concrete\Package\BasicTablePackage\Src\FieldTypes\SelfSaveInterface as SelfSaveInterface;
-use Loader;
+use Concrete\Package\BasicTablePackage\Src\BlockOptions\DropdownBlockOption;
+use Concrete\Package\BasicTablePackage\Src\BlockOptions\TextBlockOption;
+use Concrete\Package\BasicTablePackage\Src\ExampleBaseEntity;
 
 
 class Controller extends \Concrete\Package\BasicTablePackage\Block\BasicTableBlockPackaged\Controller
@@ -55,7 +43,7 @@ class Controller extends \Concrete\Package\BasicTablePackage\Block\BasicTableBlo
      * Controller constructor.
      * @param null $obj
      */
-    function __construct($obj = null)
+    function __construct ($obj = null)
     {
         //$this->model has to be instantiated before, that session handling works right
 
@@ -65,38 +53,37 @@ class Controller extends \Concrete\Package\BasicTablePackage\Block\BasicTableBlo
 
 //dontchange
         if ($obj instanceof Block) {
-         $bt = $this->getEntityManager()->getRepository('\Concrete\Package\BasicTablePackage\Src\BasicTableInstance')->findOneBy(array('bID' => $obj->getBlockID()));
+            $bt = $this->getEntityManager()->getRepository('\Concrete\Package\BasicTablePackage\Src\BasicTableInstance')
+                       ->findOneBy(array( 'bID' => $obj->getBlockID() ))
+            ;
 
             $this->basicTableInstance = $bt;
         }
 //dontchange
 
 
-  //add blockoptions here if you wish
+        //add blockoptions here if you wish
         //TODO change block options
         $this->requiredOptions = array(
             new TextBlockOption(),
-            new DropdownBlockOption()
+            new DropdownBlockOption(),
         );
 
         $this->requiredOptions[0]->set('optionName', "Test");
         $this->requiredOptions[1]->set('optionName', "TestDropDown");
         $this->requiredOptions[1]->setPossibleValues(array(
-            "test",
-            "test2"
-        ));
+                                                         "test",
+                                                         "test2",
+                                                     ));
 
 
     }
 
 
-
-
-
     /**
      * @return string
      */
-    public function getBlockTypeDescription()
+    public function getBlockTypeDescription ()
     {
         return t("Create, Edit or Delete People"); //TODO change description
     }
@@ -104,7 +91,7 @@ class Controller extends \Concrete\Package\BasicTablePackage\Block\BasicTableBlo
     /**
      * @return string
      */
-    public function getBlockTypeName()
+    public function getBlockTypeName ()
     {
         return t("BaclucExampleBlock"); //TODO change name
     }

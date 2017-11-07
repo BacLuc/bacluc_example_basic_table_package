@@ -13,14 +13,14 @@ use Concrete\Package\BasicTablePackage\Src\AbstractFormView;
 
 class EmailAddressFormView extends AbstractFormView
 {
-    public function getFormView($form, $clientSideValidationActivated=true)
+    public function getFormView ($form, $clientSideValidationActivated = true)
     {
         $variables = $this->getFilledVariables($clientSideValidationActivated); //dontchange
         $html = "
 <!-- wrap everything in one row -->
     <div class='row'>
     <!-- always display the id field  somewhere -->
-            ".$variables['id']['input'] ."
+            " . $variables['id']['input'] . "
         <div class='row'>
          <!-- Start 3 columns bootstrap layout  -->
                                        <div class = 'col-xs-12 col-sm-4'>
